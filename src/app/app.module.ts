@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     FooterComponent,
     AboutmeComponent,
     SkillsComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule
