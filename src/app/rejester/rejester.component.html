@@ -1,1 +1,127 @@
-<p>rejester works!</p>
+
+<form [formGroup]="rejesterform" (ngSubmit)="submitrejesterForm()">
+    <div class="mb-3">
+        <label for="name_input" class="form-label">name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name_input"
+          aria-describedby="name_input_help"
+          formControlName="name"
+        />
+        <div
+          id="name_input_help"
+          *ngIf="
+            rejesterform.controls['name'].touched &&
+            rejesterform.controls['name'].invalid
+          "
+          class="form-text text-danger"
+        >
+          <small *ngIf="rejesterform.controls['name'].errors?.['required']"
+            >This field is required</small
+          >
+        </div>
+      </div>
+    <div class="mb-3">
+      <label for="name_input" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name_input"
+        aria-describedby="name_input_help"
+        formControlName="email"
+      />
+      <div
+        id="name_input_help"
+        *ngIf="
+          rejesterform.controls['email'].touched &&
+          rejesterform.controls['email'].invalid
+        "
+        class="form-text text-danger"
+      >
+        <small *ngIf="rejesterform.controls['email'].errors?.['required']"
+          >This field is required</small
+        >
+        <small *ngIf="rejesterform.controls['email'].errors?.['pattern']"
+          >the email must be like (example@example.com)</small
+        >
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="username_input" class="form-label">username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username_input"
+          aria-describedby="username_input_help"
+          formControlName="username"
+        />
+        <div
+          id="username_input_help"
+          *ngIf="
+            rejesterform.controls['username'].touched &&
+            rejesterform.controls['username'].invalid
+          "
+          class="form-text text-danger"
+        >
+          <small *ngIf="rejesterform.controls['username'].errors?.['required']"
+            >This field is required</small>
+          <small *ngIf="rejesterform.controls['username'].errors?.['pattern']"> it must contain no spaces</small>
+        </div>
+      </div>
+    <div class="mb-3">
+      <label for="password_input" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password_input"
+        formControlName="password"
+      />
+      <div
+        id="password_input_help"
+        *ngIf="
+          rejesterform.controls['password'].touched &&
+          rejesterform.controls['password'].invalid
+        "
+        class="form-text text-danger"
+      >
+        <small *ngIf="rejesterform.controls['password'].errors?.['required']"
+          >This field is required</small>
+          <small *ngIf="rejesterform.controls['password'].errors?.['minlength']"
+          >This field is minlength 8</small>
+          <small *ngIf="rejesterform.controls['password'].errors?.['pattern']"
+          >This field is must contain</small>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="confirmpassword_input" class="form-label">confirmPassword</label>
+        <input
+          type="confirmpassword"
+          class="form-control"
+          id="confirmpassword_input"
+          formControlName="confirmpassword"
+        />
+        <div
+          id="confirmpassword_input_help"
+          *ngIf="
+            rejesterform.controls['confirmpassword'].touched &&
+            rejesterform.controls['confirmpassword'].invalid
+          "
+          class="form-text text-danger"
+        >
+          <small *ngIf="rejesterform.controls['confirmpassword'].errors?.['required']"
+            >This field is required</small>
+            <small *ngIf="rejesterform.controls['confirmpassword'].errors?.['minlength']"
+            >This field is minlength 8</small>
+            <small *ngIf="rejesterform.controls['confirmpassword'].errors?.['pattern']"
+            >This field is must contain</small>        
+            <small *ngIf="rejesterform.errors?.['passwordsNotMatching']">
+                Password and Confirm Password do not match.
+              </small>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-success">
+        Rejecter
+    </button>
+  </form>
+  

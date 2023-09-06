@@ -15,6 +15,8 @@ import { ProdDetailComponent } from './prod-detail/prod-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { Stockpipe } from './prod-card/prod-card.component';
 import { Stockcolor } from './prod-card/prod-card.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +29,17 @@ import { Stockcolor } from './prod-card/prod-card.component';
     ProdDetailComponent,
     CartComponent,
     Stockpipe,
-    Stockcolor
+    Stockcolor,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
