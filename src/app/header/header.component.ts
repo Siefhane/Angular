@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CounterService } from '../services/counter.service';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  isActiveProject ?: any;
-
-  activeProject() {
-      console.log (this.isActiveProject);
-    }
+  counter ?:number;
+  constructor( private countSer :CounterService) {}
+  ngOnInit(){
+    this.countSer.getCounterVal().subscribe((val:number)=>this.counter = val)
+  }
 }

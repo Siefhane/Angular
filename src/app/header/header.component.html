@@ -21,6 +21,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active"  routerLink="rejester">Resjester</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active"  routerLink="counter">
+              <img class=cart src="../../assets/cart4.svg" alt=""> 
+              <div class="counter" [style.display]="counter === 0 ? 'none' : 'block'">{{ counter }}</div>
+            </a>
           </li>
         </div>
       </div>

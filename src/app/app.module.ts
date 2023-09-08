@@ -17,6 +17,8 @@ import { Stockpipe } from './prod-card/prod-card.component';
 import { Stockcolor } from './prod-card/prod-card.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CounterComponent } from './counter/counter.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     Stockpipe,
     Stockcolor,
+    CounterComponent,
 
     
   ],
@@ -39,7 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

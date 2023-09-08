@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { product_Data } from '../data';
 import { Router } from '@angular/router';
 import { Pipe, PipeTransform } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { CounterService } from '../services/counter.service';
 
 
 @Component({
@@ -11,17 +13,27 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ProdCardComponent {
   @Input() product !: product_Data ;
-
-  constructor(private router: Router){
-
+  counter: number = 0;
+  constructor(private router: Router ,private cart : CartService , private countSer : CounterService){}
+  ngOnInit() {
+    this.countSer.getCounterVal().subscribe((val) => (this.counter = val));
   }
+ 
+  addToCart(product: any) { 
+    const existingItemIndex = this.cart.getCartItems().findIndex((item) => item.id === product.id);
+
+    if (existingItemIndex !== -1) {
+      this.cart.getCartItems()[existingItemIndex].quantity++;
+    } else {
+      this.cart.addToCart({ ...product, quantity : 1 });
+    }
+
+    this.countSer.SetCountVal(++this.counter); }
 
   redirectToDetails(id : number){ 
     this.router.navigate(['prod-detail' , id])
   }
-  redirectToCart(id : number){ 
-    this.router.navigate(['cart' , id])
-  }
+
 }
 
 @Pipe({

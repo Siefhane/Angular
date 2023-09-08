@@ -1,4 +1,5 @@
 export interface product_Data {
+    quantity?: any;
     id: number;
     brand:string;
     title: string;
