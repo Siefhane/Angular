@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CounterComponent } from './counter/counter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InputTextModule } from 'primeng/inputtext';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSlideToggleModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
